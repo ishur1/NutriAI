@@ -3,6 +3,7 @@ from pathlib import Path
 
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+from email_validator import validate_email, EmailNotValidError
 from werkzeug.security import check_password_hash, generate_password_hash
 
 app = Flask(__name__)
@@ -71,6 +72,13 @@ def signup():
     missing = [k for k in required if not data.get(k)]
     if missing:
         return jsonify({"ok": False, "error": f"Missing fields: {missing}"}), 400
+    
+    try:
+        emailinfo = validate_email(email, check_deliverability=False)
+        email = emailinfo.normalized
+
+    except EmailNotValidError as e:
+        print(str(e))
 
     # Normalize text inputs before saving.
     name = data["name"].strip()
@@ -161,5 +169,5 @@ def get_profile():
 
 
 if __name__ == "__main__":
-    # Start Flask dev server on port 5000.
-    app.run(port=5000, debug=True)
+    # Start Flask dev server on LAN-accessible host for mobile testing.
+    app.run(host="0.0.0.0", port=5000, debug=True)
