@@ -1,0 +1,23 @@
+{
+  "name": "nutriai",
+  "version": "1.0.0",
+  "description": "NutriAI is a program designed to assist people as they shop by comparing products to personal goals set by the User. In the field of nutritional tracking, AI's relating to a personalized goal set by the User is rarely seen, making this useful for many people who have unique goals personal to them.",
+  "homepage": "https://github.com/ishur1/NutriAI#readme",
+  "bugs": {
+    "url": "https://github.com/ishur1/NutriAI/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ishur1/NutriAI.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "expo": "^55.0.4"
+  }
+}
