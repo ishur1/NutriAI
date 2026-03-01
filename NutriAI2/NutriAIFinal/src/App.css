@@ -1,42 +1,126 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  min-height: 100vh;
+}
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.personalization-card {
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+
+.personalization-card h1 {
+  margin: 0 0 1rem;
+  font-size: 1.25rem;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.personalization-form {
+  display: grid;
+  gap: 0.75rem;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.personalization-form label {
+  display: grid;
+  gap: 0.35rem;
+  font-size: 0.95rem;
+}
+
+.personalization-form input,
+.personalization-form select,
+.personalization-form button {
+  font: inherit;
+  padding: 0.6rem 0.7rem;
+  border-radius: 8px;
+}
+
+.personalization-form input,
+.personalization-form select {
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+}
+
+.personalization-form button {
+  border: none;
+  background: #2563eb;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.personalization-form button:hover {
+  background: #1d4ed8;
+}
+
+.app-logo {
+  position: fixed;
+  top: -15px;
+  left:-15px;
+  width: 145px;
+  height: auto;
+  z-index: 1000;
+}
+
+@media (max-width: 768px) {
+  .app-container {
+    align-items: flex-start;
+    padding: 5.5rem 0.9rem 1rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  .personalization-card {
+    max-width: 100%;
+    border-radius: 10px;
+    padding: 1rem;
+  }
+
+  .personalization-card h1 {
+    font-size: 1.1rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .personalization-form {
+    gap: 0.65rem;
+  }
+
+  .personalization-form label {
+    font-size: 0.92rem;
+  }
+
+  .personalization-form input,
+  .personalization-form select,
+  .personalization-form button {
+    width: 100%;
+    min-height: 44px;
+    padding: 0.65rem 0.75rem;
+  }
+
+  .app-logo {
+    top: 0.5rem;
+    left: 0.5rem;
+    width: 92px;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+@media (max-width: 420px) {
+  .app-container {
+    padding: 5rem 0.7rem 0.85rem;
   }
-}
 
-.card {
-  padding: 2em;
-}
+  .personalization-card {
+    padding: 0.85rem;
+  }
 
-.read-the-docs {
-  color: #4e2f2f;
+  .personalization-card h1 {
+    font-size: 1rem;
+  }
 }
