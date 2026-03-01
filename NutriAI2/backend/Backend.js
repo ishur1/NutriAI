@@ -95,3 +95,11 @@ function adjustCaloriesForGoal({ tdee, goal, aggressiveness = "moderate" }) {
       carbGrams
     };
   }
+
+  function filterMeals(meals, preferences) {
+    return meals.filter(meal => {
+        return preferences.every(pref => meal.tags.includes(pref));
+    });
+  }
+  
+  
