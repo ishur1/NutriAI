@@ -1,0 +1,10 @@
+{
+  "name": "nutriai2",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix NutriAIFinal run dev",
+    "build": "npm --prefix NutriAIFinal run build",
+    "lint": "npm --prefix NutriAIFinal run lint",
+    "preview": "npm --prefix NutriAIFinal run preview"
+  }
+}
